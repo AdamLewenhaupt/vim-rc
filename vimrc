@@ -6,6 +6,9 @@ set nocompatible
 
 set modelines=0
 
+colors darkblue
+syntax on
+
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -43,7 +46,6 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
 
 nnoremap j gj
 nnoremap k gk
