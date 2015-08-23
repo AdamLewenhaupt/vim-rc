@@ -29,7 +29,7 @@ set backspace=indent,eol,start
 set relativenumber
 set undofile
 
-let mapleader=","
+let mapleader="-"
 nnoremap / /\v
 vnoremap / /\v
 set ignorecase
@@ -60,5 +60,4 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
 
-
-
+nnoremap <leader>f F<space>a(<ESC>A)<space>-><ESC>o
