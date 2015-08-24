@@ -6,8 +6,10 @@ set nocompatible
 
 set modelines=0
 
-colors darkblue
-syntax on
+
+syntax enable
+set background=dark
+colorscheme solarized
 
 set tabstop=4
 set shiftwidth=4
@@ -27,7 +29,6 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set relativenumber
-set undofile
 
 let mapleader="-"
 nnoremap / /\v
@@ -61,3 +62,4 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
 
 nnoremap <leader>f F<space>a(<ESC>A)<space>-><ESC>o
+nnoremap <leader>b :b#
