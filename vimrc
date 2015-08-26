@@ -1,11 +1,35 @@
+set nocompatible
 filetype off
-call pathogen#infect()
+
+if has("win32")
+    set rtp+=c:\Program\ Files\ (x86)\vim\vim74\bundle\vundle.vim
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+endif
+
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+" Plugins
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'othree/html5.vim'
+Plugin 'cakebaker/scss-syntax.vim'
+
+" Color schemes
+Plugin 'altercation/vim-colors-solarized'
+
+
+call vundle#end()
+
 filetype plugin indent on
 
-set nocompatible
 
+set omnifunc=syntaxcomplete#Complete
 set modelines=0
-
 
 syntax enable
 set background=dark
@@ -40,6 +64,10 @@ set incsearch
 set showmatch
 set hlsearch
 
+if has('gui_running')
+    set guifont=Lucida_Console:h14:cANSI
+endif
+
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
@@ -62,4 +90,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
 
 nnoremap <leader>f F<space>a(<ESC>A)<space>-><ESC>o
-nnoremap <leader>b :b#
+nnoremap <leader>b :b#<Enter>
+nnoremap <leader>h ^
+nnoremap <leader>l $
+inoremap <leader><tab> <C-X><C-O>
+
+imap <C-J> <C-N>
+imap <C-K> <C-P>
