@@ -4,7 +4,7 @@ filetype off
 if has("win32")
     set rtp+=c:\Program\ Files\ (x86)\vim\vim74\bundle\vundle.vim
 else
-    set rtp+=~/.vim/bundle/Vundle.vim
+    set rtp+=~/.vim/bundle/vundle.vim
 endif
 
 call vundle#begin()
@@ -29,7 +29,9 @@ filetype plugin indent on
 
 
 set omnifunc=syntaxcomplete#Complete
+set completeopt=menu
 set modelines=0
+
 
 syntax enable
 set background=dark
@@ -86,11 +88,10 @@ vnoremap <F1> <ESC>
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-nnoremap <C-k> <C-w>k
-nnoremap <C-j> <C-w>j
 
 nnoremap <leader>f F<space>a(<ESC>A)<space>-><ESC>o
 nnoremap <leader>b :b#<Enter>
+nnoremap <leader>i i#{}<left>
 nnoremap <leader>h ^
 nnoremap <leader>l $
 inoremap <leader><tab> <C-X><C-O>
