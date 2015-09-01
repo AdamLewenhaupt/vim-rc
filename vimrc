@@ -18,6 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'othree/html5.vim'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
