@@ -19,14 +19,33 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'othree/html5.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
 
-
 call vundle#end()
 
 filetype plugin indent on
+
+function! Run()
+    let ft = &filetype
+
+    if ft == "vim"
+        :so %<CR>
+    endif
+
+endfunction
+
+" Syntastic Settings
+set statusline+=%#waringmsg#
+set statusline+=%{SyntasticStatusLineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 set omnifunc=syntaxcomplete#Complete
@@ -58,8 +77,8 @@ set backspace=indent,eol,start
 set relativenumber
 
 let mapleader="-"
-nnoremap / /\v
-vnoremap / /\v
+nnoremap <leader>s /\v
+vnoremap <leader>s /\v
 set ignorecase
 set smartcase
 set gdefault
@@ -99,3 +118,6 @@ inoremap <leader><tab> <C-X><C-O>
 
 imap <C-J> <C-N>
 imap <C-K> <C-P>
+
+nnoremap <leader>e :CtrlP<CR>
+
