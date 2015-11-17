@@ -20,6 +20,9 @@ Plugin 'othree/html5.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'rstacruz/sparkup'
+Plugin 'Valloric/YouCompleteMe'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -98,26 +101,26 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 
-nnoremap j gj
-nnoremap k gk
-
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nnoremap <C-h> ^
+nnoremap <C-l> $
 
 nnoremap <leader>f F<space>a(<ESC>A)<space>-><ESC>o
 nnoremap <leader>b :b#<Enter>
-nnoremap <leader>i i#{}<left>
-nnoremap <leader>h ^
-nnoremap <leader>l $
-inoremap <leader><tab> <C-X><C-O>
-
-imap <C-J> <C-N>
-imap <C-K> <C-P>
-
+nnoremap <leader>ic i#{}<left>
+nnoremap <leader>id i{%<space>%}<left><left><space><left>
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l 
+" imap <NUL> <C-X><C-O>
+nnoremap <leader>r @:<cr>
+nnoremap <leader>xp :w !python %<CR>
+nnoremap <leader><c-e> :ClearAllCtrlPCaches<CR>
 nnoremap <leader>e :CtrlP<CR>
-
+nnoremap <leader>g :w<CR>:w !grunt<CR>
+nnoremap <space> zz
+nnoremap <C-j> 10jzz
+nnoremap <C-k> 10kzz
