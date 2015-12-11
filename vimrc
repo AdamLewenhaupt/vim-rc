@@ -4,7 +4,7 @@ filetype off
 if has("win32")
     set rtp+=c:\Program\ Files\ (x86)\vim\vim74\bundle\vundle.vim
 else
-    set rtp+=~/.vim/bundle/vundle.vim
+    set rtp+=~/.vim/bundle/Vundle.vim
 endif
 
 call vundle#begin()
@@ -22,7 +22,11 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rstacruz/sparkup'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'jaxbot/syntastic-react'
+Plugin 'dkprice/vim-easygrep'
 
 " Color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -45,11 +49,17 @@ set statusline+=%#waringmsg#
 set statusline+=%{SyntasticStatusLineFlag()}
 set statusline+=%*
 
+let g:jsx_ext_required = 0
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case  = 1
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menu
@@ -115,6 +125,8 @@ nnoremap <leader>ic i#{}<left>
 nnoremap <leader>id i{%<space>%}<left><left><space><left>
 nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l 
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
 " imap <NUL> <C-X><C-O>
 nnoremap <leader>r @:<cr>
 nnoremap <leader>xp :w !python %<CR>
@@ -124,3 +136,4 @@ nnoremap <leader>g :w<CR>:w !grunt<CR>
 nnoremap <space> zz
 nnoremap <C-j> 10jzz
 nnoremap <C-k> 10kzz
+nnoremap <leader><leader><space> :only<CR>
