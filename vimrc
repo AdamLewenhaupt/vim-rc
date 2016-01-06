@@ -119,7 +119,6 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> ^
 nnoremap <C-l> $
 
-nnoremap <leader>f F<space>a(<ESC>A)<space>-><ESC>o
 nnoremap <leader>b :b#<Enter>
 nnoremap <leader>ic i#{}<left>
 nnoremap <leader>id i{%<space>%}<left><left><space><left>
@@ -127,7 +126,6 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>l <C-w>l 
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
-" imap <NUL> <C-X><C-O>
 nnoremap <leader>r @:<cr>
 nnoremap <leader>xp :w !python %<CR>
 nnoremap <leader><c-e> :ClearAllCtrlPCaches<CR>
@@ -137,3 +135,8 @@ nnoremap <space> zz
 nnoremap <C-j> 10jzz
 nnoremap <C-k> 10kzz
 nnoremap <leader><leader><space> :only<CR>
+nnoremap <leader>w <Plug>(easymotion-w)
+nmap <leader>f <Plug>(easymotion-f)
+nmap <leader>t <Plug>(easymotion-t)
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
