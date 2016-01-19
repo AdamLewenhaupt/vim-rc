@@ -89,6 +89,7 @@ set ruler
 set backspace=indent,eol,start
 set relativenumber
 
+
 let mapleader="-"
 nnoremap <leader>s /\v
 vnoremap <leader>s /\v
@@ -140,3 +141,5 @@ nmap <leader>f <Plug>(easymotion-f)
 nmap <leader>t <Plug>(easymotion-t)
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
+
+imap <C-f> function () { <CR>
